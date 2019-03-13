@@ -1,0 +1,26 @@
+version: '3.7'
+services:
+  docker-splunk:
+    hostname: docker-splunk
+    build:
+      context: ./splunk
+      dockerfile: Dockerfile
+    container_name: docker-splunk
+    environment:
+      - SPLUNK_ENABLE_LISTEN=9997
+      - SPLUNK_START_ARGS=--accept-license --no-prompt --answer-yes
+      - SPLUNK_USERNAME=admin
+      - SPLUNK_PASSWORD=password
+    restart: always
+    volumes:
+      - opt_splunk_etc:/opt/splunk/etc
+      - opt_splunk_var:/opt/splunk/var
+    ports:
+      - "8000:8000"
+      #- "9997:9997"
+      - "8088:8088"
+      #- "1514:1514"
+      #- "514:514/udp"
+volumes:
+  opt_splunk_etc:
+  opt_splunk_var:
