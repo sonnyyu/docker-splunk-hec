@@ -8,15 +8,32 @@ cd docker-splunk-hec
 
 [https://github.com/sonnyyu/mtls-cert-manage](https://github.com/sonnyyu/mtls-cert-manage)
 
+# Make server.pem
+```bash
+export serverip="192.168.1.204"
+easy-rsa --subject-alt-name="DNS:localhost,IP:$serverip"  build-server-full $serverip nopass
+export workdir=~/mtls-cert-manage
+sudo -E cp $workdir/pki/pki/private/$serverip.key  $workdir/cert
+sudo -E cp $workdir/pki/pki/issued/$serverip.crt $workdir/cert
+sudo -E cp $workdir/pki/pki/ca.crt $workdir/cert 
+cd $workdir/cert
+sudo chmod 644  *
+# add password into private key
+openssl rsa -aes256 -in $serverip.key -out $serverip.pw.key
+# convert crt to pem
+openssl x509 -inform PEM -in $serverip.crt > $serverip.pem
+# genarate server.pem
+cat $serverip.pem $serverip.key ca.crt > server.pem
+```
+# show server crt file
+```bash
+openssl x509 -in  $serverip.crt -text
+```
 # Copy Certificate from mtls-cert-manage
 ```bash
 cd ~/mtls-cert-manage/cert 
 cp * ~/docker-portainer-stack/certs
 ```
-# Make PEM for portainer
-```bash
-cd ~/docker-portainer-stack/certs
-openssl x509 -inform PEM -in localhost.crt > localhost.pem
 # Build Splunk docker image
 ```bash
 docker-compose build
