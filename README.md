@@ -21,11 +21,11 @@ docker-compose down -v
 ```
 # Test web interface
 ```bash
-wget https://192.168.1.204:8000
+wget http://192.168.1.204:8000
 ```
 # Open Splunk from Browser
 ```bash
-https://192.168.1.204:8000
+http://192.168.1.204:8000
 ```
 # Allows curl to proceed and operate even for server connections otherwise considered insecure
 ```bash
