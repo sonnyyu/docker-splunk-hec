@@ -39,7 +39,7 @@ curl --cacert ca.crt  "https://192.168.1.204:8088/services/collector" \
 -H "Authorization: Splunk 3f066d2a-c871-4800-87fc-e6be5fa69f1b" \
 -d '{"event": "Hello, world!", "sourcetype": "manual"}'
 ```
-# Open Splunk from Browser
+# After install ca.crt into CA certificate store (OS)
 ```bash
 curl  "https://192.168.1.204:8088/services/collector" \
     -H "Authorization: Splunk 3f066d2a-c871-4800-87fc-e6be5fa69f1b" \
