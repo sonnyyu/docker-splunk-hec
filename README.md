@@ -3,6 +3,20 @@
 git clone https://github.com/sonnyyu/docker-splunk-hec
 cd docker-splunk-hec
 ```
+# Get Server Certificate "server.pem"
+# Use mtls-cert-manage generate server/client/ca certificate 
+
+[https://github.com/sonnyyu/mtls-cert-manage](https://github.com/sonnyyu/mtls-cert-manage)
+
+# Copy Certificate from mtls-cert-manage
+```bash
+cd ~/mtls-cert-manage/cert 
+cp * ~/docker-portainer-stack/certs
+```
+# Make PEM for portainer
+```bash
+cd ~/docker-portainer-stack/certs
+openssl x509 -inform PEM -in localhost.crt > localhost.pem
 # Build Splunk docker image
 ```bash
 docker-compose build
