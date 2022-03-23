@@ -7,7 +7,7 @@ cd docker-splunk-hec
 ```bash
 docker-compose build
 ```
-# Getting started portainer with certificate
+# Getting Splunk started 
 ```bash
 docker-compose up -d
 ```
