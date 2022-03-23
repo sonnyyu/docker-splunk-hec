@@ -4,7 +4,7 @@ git clone https://github.com/sonnyyu/docker-splunk-hec
 cd docker-splunk-hec
 ```
 # Get Server Certificate "server.pem"
-# Use mtls-cert-manage generate server/client/ca certificate 
+Use mtls-cert-manage generate server/client/ca certificate 
 
 [https://github.com/sonnyyu/mtls-cert-manage](https://github.com/sonnyyu/mtls-cert-manage)
 
