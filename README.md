@@ -27,7 +27,7 @@ wget https://192.168.1.204:8000
 ```bash
 https://192.168.1.204:8000
 ```
-# Open Splunk from Browser
+# Allows curl to proceed and operate even for server connections otherwise considered insecure
 ```bash
 curl -k "https://192.168.1.204:8088/services/collector" \
     -H "Authorization: Splunk 3f066d2a-c871-4800-87fc-e6be5fa69f1b" \
