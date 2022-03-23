@@ -1,7 +1,8 @@
 version: '3.7'
 services:
-  docker-splunk:
+  splunk:
     hostname: docker-splunk
+    container_name: splunk
     build:
       context: ./splunk
       dockerfile: Dockerfile
@@ -17,7 +18,7 @@ services:
       - opt_splunk_var:/opt/splunk/var
     ports:
       - "8000:8000"
-      #- "9997:9997"
+      - "9997:9997"
       - "8088:8088"
       #- "1514:1514"
       #- "514:514/udp"
