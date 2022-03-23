@@ -10,6 +10,7 @@ Use mtls-cert-manage generate server/client/ca certificate
 
 # Make server.pem
 ```bash
+cd ~/mtls-cert-manage
 export serverip="192.168.1.204"
 easy-rsa --subject-alt-name="DNS:localhost,IP:$serverip"  build-server-full $serverip nopass
 export workdir=~/mtls-cert-manage
@@ -32,7 +33,7 @@ openssl x509 -in  $serverip.crt -text
 # Copy Certificate from mtls-cert-manage
 ```bash
 cd ~/mtls-cert-manage/cert 
-cp * ~/docker-portainer-stack/certs
+cp ca.crt server.pem ~/docker-splunk-hec/splunk/certs
 ```
 # Build Splunk docker image
 ```bash
