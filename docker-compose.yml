@@ -12,10 +12,14 @@ services:
 #      - SPLUNK_PASSWORD=password
       SPLUNK_START_ARGS: "--accept-license"
       SPLUNK_PASSWORD: "password"
+      SPLUNK_HTTP_ENABLESSL: 1
+      SPLUNK_HTTP_ENABLESSL_CERT: /opt/splunk/etc/auth/splunkweb/192.168.1.204.pem
+      SPLUNK_HTTP_ENABLESSL_PRIVKEY: /opt/splunk/etc/auth/splunkweb/192.168.1.204.key
     restart: always
     volumes:
       - splunk_etc:/opt/splunk/etc
       - splunk_var:/opt/splunk/var
+      - ./splunk/webcerts:/opt/splunk/etc/auth/splunkweb
     ports:
       - "8000:8000"
       - "9997:9997"

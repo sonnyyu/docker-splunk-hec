@@ -1,8 +1,6 @@
 FROM splunk/splunk:latest
 USER root
 LABEL maintainer "sonnyyu123@gmail.com"
-#RUN ln -fs /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
-#RUN dpkg-reconfigure -f noninteractive tzdata
 RUN rm /etc/localtime
 RUN ln -s /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 COPY inputs.conf /opt/splunk/etc/apps/launcher/local/inputs.conf
