@@ -34,6 +34,7 @@ openssl x509 -in  $serverip.crt -text
 ```bash
 cd ~/mtls-cert-manage/cert 
 cp ca.crt server.pem ~/docker-splunk-hec/splunk/certs
+cp 192.168.1.204.pem 192.168.1.204.key ~/docker-splunk-hec/splunk/webcerts
 ```
 # Build Splunk docker image
 ```bash
