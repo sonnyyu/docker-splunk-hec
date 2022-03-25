@@ -20,6 +20,7 @@ services:
       - splunk_etc:/opt/splunk/etc
       - splunk_var:/opt/splunk/var
       - ./splunk/webcerts:/opt/splunk/etc/auth/splunkweb
+#      - ./splunk/web.conf:/opt/splunk/etc/system/local/web.conf
     ports:
       - "8000:8000"
       - "9997:9997"
