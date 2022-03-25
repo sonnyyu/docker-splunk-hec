@@ -84,3 +84,7 @@ uuidgen
 Output
 4c061a62-deae-49da-bdbe-6a4aad67d5f9
 ```
+# Update Universally Unique Identifiers (UUIDs)
+```bash
+nano ~/docker-splunk-hec/splunk/inputs.conf
+```bash
