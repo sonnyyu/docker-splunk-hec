@@ -87,4 +87,4 @@ Output
 # Update Universally Unique Identifiers (UUIDs)
 ```bash
 nano ~/docker-splunk-hec/splunk/inputs.conf
-```bash
+```
