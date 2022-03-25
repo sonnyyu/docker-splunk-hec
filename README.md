@@ -13,7 +13,7 @@ Use mtls-cert-manage generate server/client/ca certificate
 ```bash
 cd ~/mtls-cert-manage/pki/splunkcerts
 cp ca.crt server.pem ~/docker-splunk-hec/splunk/certs
-cp 192.168.1.204.pem 192.168.1.204.key ~/docker-splunk-hec/splunk/webcerts
+sudo cp 192.168.1.204.pem 192.168.1.204.key ~/docker-splunk-hec/splunk/webcerts
 ```
 # Build Splunk docker image
 ```bash
