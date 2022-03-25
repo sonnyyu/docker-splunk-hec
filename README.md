@@ -33,7 +33,7 @@ docker-compose down -v
 ```
 # Test web interface
 ```bash
-wget https://192.168.1.204:8000 -O /tmp/index.html
+curl -k https://192.168.1.204:8000 
 ```
 # Open Splunk from Browser
 ```bash
