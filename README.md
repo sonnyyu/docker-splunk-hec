@@ -43,6 +43,12 @@ curl --cacert ca.crt https://192.168.1.204:8000
 # Import CA certificate at PC
 [Install certificate](https://github.com/sonnyyu/mtls-cert-manage#install-certificate-at-windows)
 
+```bash
+sudo apt-get install -y ca-certificates
+cd ~/docker-splunk-hec/splunk/certs
+sudo cp ca.crt /usr/local/share/ca-certificates
+sudo update-ca-certificates
+```
 # Test web interface
 ```bash
 curl https://192.168.1.204:8000 
